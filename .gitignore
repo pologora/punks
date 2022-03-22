@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#data
+/src/data/punks_jsons
+/src/data/punks_images
