@@ -56,7 +56,7 @@ a {
 
 img {
   max-width: 100%;
-  display: block;
+  /* display: block; */
 }
 
 input,
@@ -96,4 +96,20 @@ body.ligth-theme {
 
 .screen-sm-hidden {
     display: none;
+}
+
+.moon-icon {
+  display: none;
+}
+
+.light-theme .sun-icon {
+  display: none;
+}
+
+.btn { 
+  cursor: pointer;
+}
+
+.close-menu-icon {
+  display: none;
 }

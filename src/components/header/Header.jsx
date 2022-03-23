@@ -6,6 +6,7 @@ import { BiMoon } from 'react-icons/bi';
 import { HiMenu } from 'react-icons/hi';
 import { IoMdClose } from 'react-icons/io';
 import { BiWallet } from 'react-icons/bi';
+import LogoImg from '../../data/punks_images/4.png';
 
 function Header() {
   return (
@@ -13,13 +14,15 @@ function Header() {
       <nav className='navbar container'>
         <Link to='/'>
           <div className='logo'>
-            <img className='logo__image' src='' alt='logo' />
+            <div className='logo_image-container'>
+              <img className='logo__image' src={LogoImg} alt='logo' />
+            </div>
             <h2 className='logo__text'>CPunks</h2>
           </div>
         </Link>
 
         <div className='navbar__menu'>
-          <Link className='navbar__menu-item' to='/'>
+          <Link className='navbar__menu-item current' to='/'>
             Home
           </Link>
           <Link className='navbar__menu-item' to='/gallery'>
@@ -35,7 +38,7 @@ function Header() {
             Mint
           </Link>
         </div>
-        <div className='navbar__item-list navbar_item-list-right'>
+        <div className='navbar__buttons navbar_item-list-right'>
           <button
             className='btn navbar__btn place-items-center theme-toggle-btn'
             id='theme-toggle-btn'
