@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import { BsSun } from 'react-icons/bs';
@@ -8,9 +8,11 @@ import { IoMdClose } from 'react-icons/io';
 import { BiWallet } from 'react-icons/bi';
 import LogoImg from '../../data/punks_images/4.png';
 
-function Header() {
+function Header(props) {
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
+
   return (
-    <header className='header' id='header'>
+    <header className='header'>
       <nav className='navbar container'>
         <Link to='/'>
           <div className='logo'>
@@ -20,8 +22,7 @@ function Header() {
             <h2 className='logo__text'>CPunks</h2>
           </div>
         </Link>
-
-        <div className='navbar__menu'>
+        <div className={`navbar__menu ${isOpenMenu ? null : 'close'}`}>
           <Link className='navbar__menu-item current' to='/'>
             Home
           </Link>
@@ -41,17 +42,23 @@ function Header() {
         <div className='navbar__buttons navbar_item-list-right'>
           <button
             className='btn navbar__btn place-items-center theme-toggle-btn'
-            id='theme-toggle-btn'
+            onClick={props.changeTheme}
           >
-            <BsSun className='icon sun-icon' />
-            <BiMoon className='icon moon-icon' />
+            <BsSun className={`icon sun-icon ${props.theme}`} />
+            <BiMoon className={`icon moon-icon ${props.theme}`} />
           </button>
           <button
             className='btn navbar__btn screen-lg-hidden place-items-center menu-toggle-btn'
-            id='menu-toggle-icon'
+            onClick={() => setIsOpenMenu(!isOpenMenu)}
           >
-            <HiMenu className='icon open-menu-icon' />
-            <IoMdClose className='icon close-menu-icon' />
+            <HiMenu
+              className='icon open-menu-icon'
+              style={{ display: isOpenMenu ? 'none' : null }}
+            />
+            <IoMdClose
+              className='icon close-menu-icon'
+              style={{ display: isOpenMenu ? null : 'none' }}
+            />
           </button>
           <button
             className='btn navbar__btn  place-items-center wallet-login-btn screen-sm-hidden fancy-border'

@@ -40,13 +40,14 @@ html {
   font-size: 62.5%;
 }
 
-body {
+.app {
   font-family: var(--font-family);
   font-size: var(--font-size-sm);
   color: var(--light-color-alt);
   background-color: var(--primary-background-color);
   letter-spacing: 1px;
   transition: background-color 0.25s, color 0.25s;
+  min-height: 100vh;
 }
 
 a {
@@ -56,7 +57,7 @@ a {
 
 img {
   max-width: 100%;
-  /* display: block; */
+  display: block;
 }
 
 input,
@@ -72,7 +73,7 @@ button {
   font-size: var(--font-size-md);
 }
 
-body.ligth-theme {
+[data-theme='light'] {
   --light-color: #3d3d3d;
   --light-color-alt: rgba(0, 0, 0, 0.6);
   --primary-background-color: #fff;
@@ -83,33 +84,29 @@ body.ligth-theme {
 }
 
 .container {
-    max-width: 160rem;
-    margin: 0 auto;
-    padding: 0 1.5rem;
+  max-width: 160rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 .place-items-center {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .screen-sm-hidden {
-    display: none;
-}
-
-.moon-icon {
   display: none;
 }
 
-.light-theme .sun-icon {
+.moon-icon.dark {
   display: none;
 }
 
-.btn { 
+.sun-icon.light{
+  display: none;
+}
+
+.btn {
   cursor: pointer;
-}
-
-.close-menu-icon {
-  display: none;
 }
