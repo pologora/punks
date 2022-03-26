@@ -1,11 +1,11 @@
-
 import './Search.css';
 
-function Search({ handleSearch, searchTerm }) {
+function Search({ handleSearch, searchTerm, type }) {
   return (
     <div className='search-container'>
       <input
-        type='search'
+        maxLength={4}
+        type={type}
         className='search'
         name='search'
         placeholder='Search punk id..'

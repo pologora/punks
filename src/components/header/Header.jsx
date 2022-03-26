@@ -7,6 +7,9 @@ import { HiMenu } from 'react-icons/hi';
 import { IoMdClose } from 'react-icons/io';
 import { BiWallet } from 'react-icons/bi';
 import LogoImg from '../../data/punks_images/4.png';
+import { BsTwitter } from 'react-icons/bs';
+import { FaTelegramPlane } from 'react-icons/fa';
+import socialLinks from '../../data/sociallinks/socialLinks';
 
 function Header(props) {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -74,6 +77,15 @@ function Header(props) {
           >
             Mint
           </Link>
+          <div className='navbar__menu-item navbar__menu-item-social'>
+            <a href={socialLinks.twitter} target="_blank">
+              <BsTwitter className='icon navbar__menu-item-social-icon twitter-icon' />
+            </a>
+            <a href={socialLinks.telegram} target="_blank">
+              <FaTelegramPlane className='icon navbar__menu-item-social-icon telegram-icon' />
+            </a>
+            <a href=''></a>
+          </div>
         </div>
 
         <div className='navbar__buttons navbar_item-list-right'>

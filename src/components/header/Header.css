@@ -78,3 +78,9 @@
 
 .wallet-login-icon {
 }
+
+.navbar__menu-item-social {
+  display: flex;
+  justify-content: space-between;
+}
+

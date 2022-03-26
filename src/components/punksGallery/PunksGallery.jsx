@@ -2,8 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Punk from '../punk/Punk';
 import './PunksGallery.css';
+import allPunksJson from '../../data/allinonejson/punks_objects.json';
 
-function PunksGallery({ punksJsonArray }) {
+function PunksGallery({punks}) {
+
+  function getPunksJson(punksId) {
+    const punksJson = [];
+    for (let index = 0; index < punksId.length; index++) {
+      const punk = allPunksJson.filter(
+        (elem) => elem.edition === punksId[index]
+      );
+      punksJson.push(punk[0]);
+    }
+    return punksJson;
+  }
+const punksJsonArray = getPunksJson(punks)
+
   return (
     <div className='punksGallery'>
       {punksJsonArray.map((punk) => (

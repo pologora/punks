@@ -1,6 +1,8 @@
 :root {
   --light-color: rgb(255, 255, 255);
   --light-color-alt: #afb6cd;
+  --important-color-red: rgb(255, 4, 4);
+  --important-color-green: rgb(2, 156, 2);
   --primary-background-color: #121417;
   --secondary-background-color: #252830;
   --punk-background-color: rgb(54, 53, 61);
@@ -80,6 +82,7 @@ button {
 [data-theme='light'] {
   --light-color: #3d3d3d;
   --light-color-alt: rgba(0, 0, 0, 0.6);
+  --important-color-green: rgb(2, 122, 2);
   --primary-background-color: #fff;
   --secondary-background-color: #f1f1f1;
   --punk-background-color: rgba(214, 200, 200, 0.726);
@@ -120,4 +123,11 @@ button {
   padding: 100px 20px;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.twitter-icon:hover {
+  color: #1DA1F2;
+}
+.telegram-icon:hover {
+  color: #229ED9;
 }

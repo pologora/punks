@@ -1,0 +1,25 @@
+.punk-info__title {
+    color: var(--important-color-green);
+}
+
+.punk-info__image-container {
+    margin-block: var(--margin-md);
+}
+
+.punk-info__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.punk-info__info-value {
+  font-weight: bold;
+  padding-left: 1rem;
+}
+
+.punk-info__attributes-value-item {
+    margin: 1px;
+    color: var(--important-color-red);
+    /* background-color: var(--punk-background-color); */
+    border-radius: 5px;
+}
