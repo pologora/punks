@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import { BsSun } from 'react-icons/bs';
@@ -10,11 +10,27 @@ import LogoImg from '../../data/punks_images/4.png';
 
 function Header(props) {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const [scroll, setScroll] = useState(0);
+
+  const handleScroll = () => {
+    setScroll(window.scrollY);
+  };
+
+  const handleMenuItemClick = () => {
+    setIsOpenMenu(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <header className='header'>
+    <header className={`header ${scroll > 15 ? 'active' : null}`}>
       <nav className='navbar container'>
-        <Link to='/'>
+        <Link to='/' onClick={handleMenuItemClick}>
           <div className='logo'>
             <div className='logo_image-container'>
               <img className='logo__image' src={LogoImg} alt='logo' />
@@ -22,24 +38,48 @@ function Header(props) {
             <h2 className='logo__text'>CPunks</h2>
           </div>
         </Link>
-        <div className={`navbar__menu ${isOpenMenu ? null : 'close'}`}>
-          <Link className='navbar__menu-item current' to='/'>
+        <div className={`navbar__menu ${isOpenMenu ? 'active' : null}`}>
+          <Link
+            className='navbar__menu-item current'
+            to='/'
+            onClick={handleMenuItemClick}
+          >
             Home
           </Link>
-          <Link className='navbar__menu-item' to='/gallery'>
+          <Link
+            className='navbar__menu-item'
+            to='/gallery'
+            onClick={handleMenuItemClick}
+          >
             Gallery
           </Link>
-          <Link className='navbar__menu-item' to='/market'>
+          <Link
+            className='navbar__menu-item'
+            to='/market'
+            onClick={handleMenuItemClick}
+          >
             Market
           </Link>
-          <Link className='navbar__menu-item' to='/wallet'>
+          <Link
+            className='navbar__menu-item'
+            to='/wallet'
+            onClick={handleMenuItemClick}
+          >
             My wallet
           </Link>
-          <Link className='navbar__menu-item' to='/mint'>
+          <Link
+            className='navbar__menu-item'
+            to='/mint'
+            onClick={handleMenuItemClick}
+          >
             Mint
           </Link>
         </div>
+
         <div className='navbar__buttons navbar_item-list-right'>
+          <button className='btn navbar__btn  place-items-center wallet-login-btn  fancy-border'>
+            <BiWallet className='icon wallet-login-icon' />
+          </button>
           <button
             className='btn navbar__btn place-items-center theme-toggle-btn'
             onClick={props.changeTheme}
@@ -59,13 +99,6 @@ function Header(props) {
               className='icon close-menu-icon'
               style={{ display: isOpenMenu ? null : 'none' }}
             />
-          </button>
-          <button
-            className='btn navbar__btn  place-items-center wallet-login-btn screen-sm-hidden fancy-border'
-            id='wallet-login-icon'
-          >
-            <BiWallet className='icon wallet-login-icon' />
-            Connect Wallet
           </button>
         </div>
       </nav>

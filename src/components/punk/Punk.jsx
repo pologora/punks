@@ -1,9 +1,22 @@
-import React from 'react'
+import React from 'react';
+import testImg from '../../data/punks_images/7.png';
+import './Punk.css';
 
-function Punk() {
+function Punk({ edition, rank, type, src }) {
   return (
-    <div>Punk</div>
-  )
+    <div className='punk'>
+      <div className='punk__img-container'>
+        <img src={src} alt='punk' className='punk__img' />
+      </div>
+      <div className='punk__info'>
+        <div className='punk__id'>{edition}</div>
+        <div className='punk__info-right'>
+          <div className='punk__rank'>rank {rank}</div>
+          <div className='punk__type'>{type}</div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default Punk
+export default Punk;

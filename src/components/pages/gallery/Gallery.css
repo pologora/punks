@@ -1,0 +1,6 @@
+
+.gallery-page__gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+

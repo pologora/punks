@@ -1,0 +1,8 @@
+.search {
+    border: 1px solid var(--secondary-background-color);
+    height: 4rem;
+    padding: var(--padding-sm);
+    border-radius: 10px;
+    margin: var(--margin-md) auto;
+  }
+  

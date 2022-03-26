@@ -1,0 +1,43 @@
+.punk {
+    background-color: var(--secondary-background-color);
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding-sm);
+    border-radius: var(--border-radius);
+    margin: var(--margin-sm) auto;
+    max-width: 250px;
+    width: 80%;
+}
+
+.punk__img-container {
+    background-color: var(--punk-background-color);
+    width: 95%;
+    border-radius: var(--border-radius);
+    margin: 0 auto;
+    margin-top: 2.5%;
+}
+
+.punk__img {
+    width: 100%;
+    image-rendering: pixelated;
+}
+
+.punk__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: var(--margin-sm);
+    width: 95%;
+}
+
+.punk__info-right {
+    font-size: var(--font-size-xsm);
+    text-align: right;
+}
+
+.punk__id {
+    color: var(--light-color);
+    font-weight: bold;
+}

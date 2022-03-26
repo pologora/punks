@@ -5,6 +5,11 @@
   left: 0;
   width: 100%;
   z-index: 999;
+  transition: box-shadow 0.25s ease-in;
+}
+
+.header.active {
+    box-shadow: 0 1px 0.5rem var(--transparent-light-color);
 }
 
 .navbar {
@@ -40,11 +45,13 @@
   background-color: var(--secondary-background-color);
   transition: opacity 0.25s ease-in;
   gap: var(--gap);
-}
-
-.navbar__menu.close {
   opacity: 0;
   transform: scale(0);
+}
+.navbar__menu.active {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 1px 1px 0.5rem var(--transparent-light-color);
 }
 
 .navbar__menu-item.current {
@@ -59,4 +66,15 @@
 .navbar__menu-item:hover,
 .btn:hover {
   color: var(--light-color);
+}
+
+.wallet-login-btn {
+    /* font-size: var(--font-size-sm); */
+   
+    border-radius: 20px;
+    font-size: 0.8rem;
+    padding: 2px;
+}
+
+.wallet-login-icon {
 }
