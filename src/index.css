@@ -22,7 +22,7 @@
   --font-family: 'Poppins', sans-serif;
   --font-size-xsm: 1.2rem;
   --font-size-sm: 1.6rem;
-  --font-size-md: 2.4rem;
+  --font-size-md: 2.0rem;
   --font-size-lg: 3rem;
   --font-size-xl: 4rem;
   --gap: 2rem;
@@ -123,6 +123,7 @@ button {
   padding: 100px 20px;
   max-width: 1200px;
   margin: 0 auto;
+  min-height: 100vh;
 }
 
 .twitter-icon:hover {
@@ -131,3 +132,4 @@ button {
 .telegram-icon:hover {
   color: #229ED9;
 }
+

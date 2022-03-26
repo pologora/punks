@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/header/Header';
 import MyRoutes from './components/MyRoutes';
 import useLocalStorage from 'use-local-storage';
+import Footer from './components/pages/footer/Footer';
 
 function App() {
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -18,6 +19,7 @@ function App() {
     <div className='app' data-theme={theme}>
       <Header changeTheme={changeTheme} theme={theme} />
       <MyRoutes />
+      <Footer />
     </div>
   );
 }

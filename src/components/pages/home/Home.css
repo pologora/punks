@@ -1,1 +1,41 @@
+.home__title {
+  display: flex;
+  align-items: center;
+}
 
+.home__title-text {
+  font-size: var(--font-size-lg);
+  /* color: var(--light-color); */
+  color: var(--important-color-red);
+}
+
+.home__title-img {
+  display: block;
+  width: 30%;
+  image-rendering: pixelated;
+}
+
+.home__about,
+.home__about p {
+  margin-top: var(--margin-sm);
+  font-size: var(--font-size-md);
+}
+
+.home__about__article-attributes {
+    color: var(--important-color-red);
+}
+
+.home__mint {
+    text-align: center;
+}
+
+.home__mint-btn {
+    margin: var(--margin-sm);
+    padding: var(--padding-sm) 5rem;
+    border-radius: 3rem;    
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: var(--important-color-green);
+    color: #fff;
+}

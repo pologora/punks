@@ -38,7 +38,7 @@ function Header(props) {
             <div className='logo_image-container'>
               <img className='logo__image' src={LogoImg} alt='logo' />
             </div>
-            <h2 className='logo__text'>CPunks</h2>
+            <h2 className='logo__text'>Cpunks</h2>
           </div>
         </Link>
         <div className={`navbar__menu ${isOpenMenu ? 'active' : null}`}>
@@ -68,7 +68,7 @@ function Header(props) {
             to='/wallet'
             onClick={handleMenuItemClick}
           >
-            My wallet
+            My punks
           </Link>
           <Link
             className='navbar__menu-item'
@@ -77,11 +77,11 @@ function Header(props) {
           >
             Mint
           </Link>
-          <div className='navbar__menu-item navbar__menu-item-social'>
-            <a href={socialLinks.twitter} target="_blank">
+          <div className='navbar__menu-item navbar__menu-item-social place-items-center '>
+            <a href={socialLinks.twitter} target='_blank'>
               <BsTwitter className='icon navbar__menu-item-social-icon twitter-icon' />
             </a>
-            <a href={socialLinks.telegram} target="_blank">
+            <a href={socialLinks.telegram} target='_blank'>
               <FaTelegramPlane className='icon navbar__menu-item-social-icon telegram-icon' />
             </a>
             <a href=''></a>

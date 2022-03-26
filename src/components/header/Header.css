@@ -9,7 +9,7 @@
 }
 
 .header.active {
-    box-shadow: 0 1px 0.5rem var(--transparent-light-color);
+  box-shadow: 0 1px 0.5rem var(--transparent-light-color);
 }
 
 .navbar {
@@ -69,18 +69,15 @@
 }
 
 .wallet-login-btn {
-    /* font-size: var(--font-size-sm); */
-   
-    border-radius: 20px;
-    font-size: 0.8rem;
-    padding: 2px;
+  /* font-size: var(--font-size-sm); */
+
+  border-radius: 20px;
+  font-size: 0.8rem;
+  padding: 2px;
 }
 
-.wallet-login-icon {
+.navbar__menu-item-social-icon {
+  margin: 0 3rem;
 }
 
-.navbar__menu-item-social {
-  display: flex;
-  justify-content: space-between;
-}
 

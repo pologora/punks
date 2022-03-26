@@ -1,0 +1,18 @@
+.mint__title,
+.mint__text,
+.mint__submit {
+    margin-block: var(--margin-sm);
+}
+
+.mint__input {
+    border-bottom: 2px solid var(--light-color-alt);
+    width: 100%;
+}
+
+.mint__submit {
+    color: var(--important-color-green);
+    font-weight: bold;
+    border: 2px solid var(--important-color-green);
+    padding: .5rem 3rem;
+    border-radius: 3rem;
+}
