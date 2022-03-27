@@ -6,7 +6,8 @@
     border-radius: var(--border-radius);
     margin: var(--margin-sm) auto;
     max-width: 250px;
-    width: 80%;
+    min-width: 200px;
+    /* width: 80%; */
 }
 
 .punk__img-container {

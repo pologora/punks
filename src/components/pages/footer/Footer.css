@@ -1,18 +1,21 @@
 .footer {
-  padding: 5px 20px;
-  max-width: 1200px;
+  padding: var(--padding-sm) var(--margin-sm);
   margin: 0 auto;
-}
-
-.footer__info {
-  font-size: var(--font-size-sm);
+  background-color: var(--secondary-background-color);
 }
 
 .footer__social-links {
   text-align: center;
 }
 
+.footer__info {
+  font-size: var(--font-size-sm);
+}
+
 .footer__icon {
-  margin: 0 3rem 3rem;
+  margin-right: 2rem ;
   font-size: var(--font-size-lg);
 }
+
+
+

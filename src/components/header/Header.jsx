@@ -77,7 +77,7 @@ function Header(props) {
           >
             Mint
           </Link>
-          <div className='navbar__menu-item navbar__menu-item-social place-items-center '>
+          <div className='navbar__menu-item navbar__menu-item-social'>
             <a href={socialLinks.twitter} target='_blank'>
               <BsTwitter className='icon navbar__menu-item-social-icon twitter-icon' />
             </a>

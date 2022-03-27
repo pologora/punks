@@ -1,5 +1,5 @@
 const socialLinks = {
-  twitter: '#',
+  twitter: 'https://twitter.com/CpunksOnCronos',
   telegram: 'https://t.me/cronosBlockchainPunks',
 };
 

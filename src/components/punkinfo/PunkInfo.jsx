@@ -34,37 +34,39 @@ function PunkInfo() {
         <RiArrowGoBackFill className='icon punk-info__btn-icon' />
       </button>
       <h2 className='punk-info__title'>{pankJson.name}</h2>
-      <div className='punk-info__image-container punk__img-container'>
-        <img
-          className='punk-info__image punk__img'
-          src={require(`../../data/punks_images/${id}.png`)}
-          alt={`punk id number ${id}`}
-        />
-      </div>
-      <div className='punk-info__info'>
-        <div className='punk-info__type'>
-          <p className='punk-info__type-title info-title'>type</p>
-          <p className='punk-info__type-value punk-info__info-value'>
-            {pankJson.attributes[0].value}
-          </p>
+      <div className='punk-info__container'>
+        <div className='punk-info__image-container'>
+          <img
+            className='punk-info__image punk__img'
+            src={require(`../../data/punks_images/${id}.png`)}
+            alt={`punk id number ${id}`}
+          />
         </div>
-        <div className='punk-info__attributes'>
-          <p className='punk-info__attributes-title info-title'>attributes</p>
-          <div className='punk-info__attributes-value-list punk-info__info-value'>
-            {attributesList}
+        <div className='punk-info__info'>
+          <div className='punk-info__type'>
+            <p className='punk-info__type-title info-title'>type</p>
+            <p className='punk-info__type-value punk-info__info-value'>
+              {pankJson.attributes[0].value}
+            </p>
           </div>
-        </div>
-        <div className='punk-info__rank'>
-          <p className='punk-info__attributes-title info-title'>rank</p>
-          <p className='punk-info__attributes-value punk-info__info-value'>
-            {pankJson.attributes[2].value}
-          </p>
-        </div>
-        <div className='punk-info__owner'>
-          <p className='punk-info__owner-title info-title'>owner</p>
-          <p className='punk-info__owner-value punk-info__info-value'>
-            {ownerAddress ? ownerAddress : '-'}
-          </p>
+          <div className='punk-info__attributes'>
+            <p className='punk-info__attributes-title info-title'>attributes</p>
+            <div className='punk-info__attributes-value-list punk-info__info-value'>
+              {attributesList}
+            </div>
+          </div>
+          <div className='punk-info__rank'>
+            <p className='punk-info__attributes-title info-title'>rank</p>
+            <p className='punk-info__attributes-value punk-info__info-value'>
+              {pankJson.attributes[2].value}
+            </p>
+          </div>
+          <div className='punk-info__owner'>
+            <p className='punk-info__owner-title info-title'>owner</p>
+            <p className='punk-info__owner-value punk-info__info-value'>
+              {ownerAddress ? ownerAddress : '-'}
+            </p>
+          </div>
         </div>
       </div>
     </div>

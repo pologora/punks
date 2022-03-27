@@ -32,6 +32,7 @@
   --item-min-height-md: 30rem;
   --border-radius: 2.3rem;
   --padding-sm: 1rem;
+  --padding-md: 2rem;
 }
 /* Base styles */
 
@@ -129,7 +130,17 @@ button {
 .twitter-icon:hover {
   color: #1DA1F2;
 }
+
 .telegram-icon:hover {
   color: #229ED9;
 }
 
+@media screen and (min-width: 500px){
+  .punksGallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+  }
+  
+  
+}
