@@ -47,6 +47,10 @@ html {
   font-size: 62.5%;
 }
 
+small {
+  font-size: 1rem;
+}
+
 .app {
   font-family: var(--font-family);
   font-size: var(--font-size-sm);

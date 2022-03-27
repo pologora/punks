@@ -38,7 +38,7 @@ function Header(props) {
             <div className='logo_image-container'>
               <img className='logo__image' src={LogoImg} alt='logo' />
             </div>
-            <h2 className='logo__text'>Cpunks</h2>
+            <h2 className='logo__text'>Cpunks <small>beta</small></h2>
           </div>
         </Link>
         <div className={`navbar__menu ${isOpenMenu ? 'active' : null}`}>
@@ -77,7 +77,7 @@ function Header(props) {
           >
             Mint
           </Link>
-          <div className='navbar__menu-item navbar__menu-item-social'>
+          <div className='navbar__menu-item navbar__menu-item-social screen-lg-hidden'>
             <a href={socialLinks.twitter} target='_blank'>
               <BsTwitter className='icon navbar__menu-item-social-icon twitter-icon' />
             </a>
