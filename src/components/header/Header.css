@@ -69,7 +69,6 @@
 }
 
 .wallet-login-btn {
-  /* font-size: var(--font-size-sm); */
   border-radius: 20px;
   font-size: 0.8rem;
   padding: 2px;
@@ -78,6 +77,11 @@
 .navbar__menu-item-social-icon {
   margin-right: var(--margin-sm);
   align-self: baseline;
+}
+
+@media screen and (min-width: 800px) {
+ 
+  
 }
 
 

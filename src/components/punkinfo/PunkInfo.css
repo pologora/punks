@@ -36,10 +36,7 @@
     gap: var(--gap);
     justify-content: space-between;
   }
-  .punk-info__info {
-    flex-direction: row;
-    padding-right: 3rem;
-  }
+  
   .punk-info__image-container {
     margin: 0;
     flex-shrink: 0;
@@ -55,5 +52,6 @@
 @media screen and (min-width: 800px) {
   .punk-info__info {
     flex-direction: row;
+    gap: 5vw;
   }
 }
