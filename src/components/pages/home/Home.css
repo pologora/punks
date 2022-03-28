@@ -27,6 +27,7 @@
 
 .home__mint {
     text-align: center;
+    margin-top: 10vw;
 }
 
 .home__mint-btn {
@@ -38,4 +39,11 @@
     letter-spacing: 2px;
     background-color: var(--important-color-green);
     color: #fff;
+}
+
+
+@media screen and (min-width: 800px) {
+  .home__mint {
+    margin-top: 5vw;
+  }
 }

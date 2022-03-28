@@ -7,6 +7,7 @@
 .mint__input {
     border-bottom: 2px solid var(--light-color-alt);
     width: 100%;
+    display: block;
 }
 
 .mint__submit {

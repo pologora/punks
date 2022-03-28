@@ -47,11 +47,16 @@
     flex-wrap: wrap;
     margin: 0 auto;
   }
+
+  
 }
 
 @media screen and (min-width: 800px) {
   .punk-info__info {
     flex-direction: row;
     gap: 5vw;
+  }
+  .punk-info__info-value {
+    padding-left: 0;
   }
 }

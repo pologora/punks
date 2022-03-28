@@ -27,7 +27,7 @@ function Home(props) {
           <span className='home__about__article-attributes'> aliens</span>, 24{' '}
           <span className='home__about__article-attributes'>apes</span>, 88
           <span className='home__about__article-attributes'> zombies</span> and
-          95 other{' '}
+          87 {' '}
           <span className='home__about__article-attributes'>attributes</span>.
         </p>
         <p className='home__about__article'></p>

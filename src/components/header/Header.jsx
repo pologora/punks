@@ -43,7 +43,7 @@ function Header(props) {
         </Link>
         <div className={`navbar__menu ${isOpenMenu ? 'active' : null}`}>
           <Link
-            className='navbar__menu-item current'
+            className='navbar__menu-item'
             to='/'
             onClick={handleMenuItemClick}
           >

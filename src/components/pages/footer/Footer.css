@@ -8,13 +8,24 @@
   text-align: center;
 }
 
-.footer__info {
-  font-size: var(--font-size-sm);
+.footer__contract a{
+  color: var(--important-color-green);
 }
 
 .footer__icon {
   margin-right: 2rem ;
   font-size: var(--font-size-lg);
+}
+
+@media screen and (min-width: 500px) {
+
+  .footer {
+    font-size: var(--font-size-xsm);
+    text-align: center;
+  }
+  .footer__icon {
+    font-size: var(--font-size-md);
+  }
 }
 
 

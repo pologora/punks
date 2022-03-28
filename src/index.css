@@ -22,7 +22,7 @@
   --font-family: 'Poppins', sans-serif;
   --font-size-xsm: 1.2rem;
   --font-size-sm: 1.6rem;
-  --font-size-md: 2.0rem;
+  --font-size-md: 2rem;
   --font-size-lg: 3rem;
   --font-size-xl: 4rem;
   --gap: 2rem;
@@ -132,17 +132,24 @@ button {
 }
 
 .twitter-icon:hover {
-  color: #1DA1F2;
+  color: #1da1f2;
 }
 
 .telegram-icon:hover {
-  color: #229ED9;
+  color: #229ed9;
 }
 
-@media screen and (min-width: 500px){
+@media screen and (min-width: 500px) {
   .punksGallery {
     display: flex;
     flex-wrap: wrap;
     gap: var(--gap);
+  }
+  .mint__input {
+    max-width: 500px;
+  }
+
+  .footer__icon {
+    font-size: var(--font-size-sm);
   }
 }
