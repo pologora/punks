@@ -1,32 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import './Gallery.css';
-import Search from '../../search/Search';
-import PunksGallery from '../../punksGallery/PunksGallery';
+import React, { useState, useEffect } from 'react'
+import './Gallery.css'
+import Search from '../../search/Search'
+import PunksGallery from '../../punksGallery/PunksGallery'
 
-const startPunksId = [];
-for (let i = 0; i < 20; i++) {
-  startPunksId.push(i);
+const startPunksId = []
+for (let i = 0; i < 109; i++) {
+  startPunksId.push(i)
 }
 
 function Gallery() {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState('')
   //punks id for rendering
-  const [punksId, setPunksID] = useState(startPunksId);
+  const [punksId, setPunksID] = useState(startPunksId)
 
   const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
-  };
+    setSearchTerm(e.target.value)
+  }
 
   //render punk by id from search input
   useEffect(() => {
-    if(!searchTerm){
+    if (!searchTerm) {
       setPunksID(startPunksId)
     }
     if (+searchTerm >= 1 && +searchTerm <= 9999) {
-      const newPunkId = [+searchTerm];
-      setPunksID(newPunkId);
+      const newPunkId = [+searchTerm]
+      setPunksID(newPunkId)
     }
-  }, [searchTerm]);
+    if (+searchTerm === 111) {
+      const testId = []
+      for (let i = 0; i < 1000; i += 10) {
+        testId.push(i)
+      }setPunksID(testId)
+    }
+  }, [searchTerm])
 
   return (
     <div className='gallery-page'>
@@ -43,7 +49,7 @@ function Gallery() {
         <PunksGallery punks={punksId} />
       </div>
     </div>
-  );
+  )
 }
 
-export default Gallery;
+export default Gallery

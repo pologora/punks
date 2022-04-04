@@ -6,6 +6,7 @@ function Search({ handleSearch, searchTerm, type }) {
       <input
         maxLength={4}
         type={type}
+        min={1}
         className='search'
         name='search'
         placeholder='Search punk id..'
