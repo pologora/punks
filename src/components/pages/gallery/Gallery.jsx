@@ -4,7 +4,7 @@ import Search from '../../search/Search'
 import PunksGallery from '../../punksGallery/PunksGallery'
 
 const startPunksId = []
-for (let i = 0; i < 109; i++) {
+for (let i = 0; i < 10000; i++) {
   startPunksId.push(i)
 }
 

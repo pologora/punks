@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Punk from '../punk/Punk'
 import './PunksGallery.css'
 import allPunksJson from '../../data/allinonejson/punks_objects.json'
+import useFilter from '../useFilter'
 
 function PunksGallery({ punks }) {
   const [punksJsonArray, setPunksJsonArray] = useState([])
@@ -11,14 +12,18 @@ function PunksGallery({ punks }) {
   useEffect(() => {
     getPunksIds()
   }, [])
+  /* START: Testing filter arrays */
+  const items = ['Ape']
+  const filterPunks = useFilter(items)
+  console.log(filterPunks)
 
+
+  /* END:Testing filter arrays */
+//Infinite scroll
   const observer = useRef()
 
   const lastPank = useCallback(
     (node) => {
-      console.log(node)
-      console.log(punks)
-
       if (observer.current) observer.current.disconnect()
       observer.current = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting) {
@@ -54,9 +59,7 @@ function PunksGallery({ punks }) {
     getPunksJson(punksIDs)
   }, [punksIDs])
 
-  
   function getPunksJson(punksId) {
-    console.log(punksIDs)
     const punksJson = []
     for (let index = 0; index < punksId.length; index++) {
       const punk = allPunksJson.filter(
