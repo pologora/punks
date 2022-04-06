@@ -1,0 +1,51 @@
+.filter__icon-container {
+    font-size:var(--font-size-md) ;
+}
+.filter__open-icon {
+    margin-right: 1rem;
+}
+
+.filter__grid {
+    position: absolute;
+    top: 2.5vw;
+    left: 2.5vw;
+    z-index: 999;
+    background-color:var(--primary-background-color) ;
+    width: 95%;
+    border-radius: 2rem;
+    padding: 2rem;
+    display: none;
+}
+.filter__grid.active {
+    display: block;
+}
+
+.filter__grid-close-btn-container {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    font-size: var(--font-size-lg);
+}
+
+.filter__sort-container {
+    margin-top: 2.5rem;
+}
+
+.filter__sort-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    justify-content: space-between;
+    margin-top: 1rem;
+    /* color: var(--light-color); */
+    font-weight: bold;
+}
+
+.filter__sort-item {
+    flex-basis: 45%;
+}
+
+.filter__sort-item--checked {
+    color: var(--important-color-red);
+}
+

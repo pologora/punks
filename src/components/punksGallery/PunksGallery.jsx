@@ -12,14 +12,8 @@ function PunksGallery({ punks }) {
   useEffect(() => {
     getPunksIds()
   }, [])
-  /* START: Testing filter arrays */
-  const items = ['Ape']
-  const filterPunks = useFilter(items)
-  console.log(filterPunks)
 
-
-  /* END:Testing filter arrays */
-//Infinite scroll
+  //Infinite scroll
   const observer = useRef()
 
   const lastPank = useCallback(

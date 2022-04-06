@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './Gallery.css'
 import Search from '../../search/Search'
 import PunksGallery from '../../punksGallery/PunksGallery'
+import Filter from '../../filter/Filter'
 
 const startPunksId = []
 for (let i = 0; i < 10000; i++) {
@@ -30,7 +31,8 @@ function Gallery() {
       const testId = []
       for (let i = 0; i < 1000; i += 10) {
         testId.push(i)
-      }setPunksID(testId)
+      }
+      setPunksID(testId)
     }
   }, [searchTerm])
 
@@ -38,11 +40,14 @@ function Gallery() {
     <div className='gallery-page'>
       <div className='gallery-page__header'>
         <h1>Gallery</h1>
-        <Search
-          searchTerm={searchTerm}
-          handleSearch={handleSearch}
-          type={'number'}
-        />
+        <div className='gallary-page__search-container'>
+          <Search
+            searchTerm={searchTerm}
+            handleSearch={handleSearch}
+            type={'number'}
+          />
+          <Filter />
+        </div>
       </div>
 
       <div className='gallery-page__gallery'>
