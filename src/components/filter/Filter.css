@@ -15,6 +15,7 @@
     border-radius: 2rem;
     padding: 2rem;
     display: none;
+    overflow: hidden;
 }
 .filter__grid.active {
     display: block;
@@ -48,4 +49,12 @@
 .filter__sort-item--checked {
     color: var(--important-color-red);
 }
+
+.filter__sort-item input {
+    /* opacity: 0; */
+    display: none;
+}
+
+
+
 

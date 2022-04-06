@@ -1,4 +1,4 @@
-/*gets array of attributes and returns punks IDs array*/
+/*takes array of attributes and returns punks IDs array*/
 
 import { useEffect, useState } from 'react'
 import allPunksJson from '../data/allinonejson/punks_objects.json'

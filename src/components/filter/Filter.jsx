@@ -1,74 +1,118 @@
-import React, { useState } from 'react'
-import attributes from '../../data/attributesJson/attributesArray.json'
+import React, { useEffect, useState } from 'react'
+import attributesData from '../../data/attributesJson/attributesArray.json'
 import { BsFilter } from 'react-icons/bs'
 import './Filter.css'
 import { IoMdClose } from 'react-icons/io'
+//lists of attributes needed for checkboxes generation
+const { attributes, attributes_count, rank, type } = attributesData
 
-const startCheckboxes = {}
-
-for (let i = 0; i < attributes.attributes.length; i++) {
-  if (attributes.attributes[i] == 'all') {
-    startCheckboxes['allAttributes'] = true
+const startCheckboxesValue = (attributesArray, allName) => {
+  const startCheckboxObj = {}
+  for (let i = 0; i < attributesArray.length; i++) {
+    if (attributesArray[i] == 'all') {
+      startCheckboxObj[allName] = true
+    } else startCheckboxObj[attributesArray[i]] = false
   }
-  startCheckboxes[attributes.attributes[i]] = false
-}
-for (let i = 0; i < attributes.attributes_count.length; i++) {
-  if (attributes.attributes[i] == 'all') {
-    startCheckboxes['allCount'] = true
-  }
-  startCheckboxes[attributes.attributes_count[i]] = false
-}
-for (let i = 0; i < attributes.rank.length; i++) {
-  if (attributes.attributes[i] == 'all') {
-    startCheckboxes['allRank'] = true
-  }
-  startCheckboxes[attributes.rank[i]] = false
-}
-for (let i = 0; i < attributes.type.length; i++) {
-  if (attributes.attributes[i] == 'all') {
-    startCheckboxes['allType'] = true
-  }
-  startCheckboxes[attributes.type[i]] = false
+  return startCheckboxObj
 }
 
+const attributesCheckboxesInitialValue = startCheckboxesValue(attributes, 'allAttributes')
+const rankCheckboxesInitialValue = startCheckboxesValue(rank, 'allRank')
+const typeCheckboxesInitialValue = startCheckboxesValue(type, 'allType')
+const countCheckboxesInitialValue = startCheckboxesValue(attributes_count, 'allCount')
+//TODO: make better code
 function Filter() {
   const [isOpenGrid, setIsOpenGrid] = useState(false)
-  const [isChecked, setIsChecked] = useState(startCheckboxes)
+  const [isCheckedAttributes, setIsCheckedAttributes] = useState(attributesCheckboxesInitialValue)
+  const [isCheckedRank, setIsCheckedRank] = useState(rankCheckboxesInitialValue)
+  const [isCheckedType, setIsCheckedType] = useState(typeCheckboxesInitialValue)
+  const [isCheckedCount, setIsCheckedCount] = useState(countCheckboxesInitialValue)
+  const [activeFilter, setActiveFilter] = useState([])
 
+  console.log(isCheckedRank)
 
-  const handleOnChange = (e) => {
+  //TODO:create one handler function for checkboxes change state
+  const handleOnChangeAttributes = (e) => {
     const { name, checked } = e.target
-    console.log(name)
-    setIsChecked((prevState) => ({
+    if (name == 'allAttributes') {
+      setIsCheckedAttributes({
+        ...attributesCheckboxesInitialValue,
+      })
+      return
+    }
+    setIsCheckedAttributes((prevState) => ({
       ...prevState,
+      allAttributes: false,
+      [name]: checked,
+    }))
+  }
+  const handleOnChangeRank = (e) => {
+    const { name, checked } = e.target
+    if (name == 'allRank') {
+      setIsCheckedRank({
+        ...rankCheckboxesInitialValue,
+      })
+      return
+    }
+    setIsCheckedRank((prevState) => ({
+      ...prevState,
+      allRank: false,
+      [name]: checked,
+    }))
+  }
+  const handleOnChangeType = (e) => {
+    const { name, checked } = e.target
+    if (name == 'allType') {
+      setIsCheckedType({
+        ...typeCheckboxesInitialValue,
+      })
+      return
+    }
+    setIsCheckedType((prevState) => ({
+      ...prevState,
+      allType: false,
+      [name]: checked,
+    }))
+  }
+  const handleOnChangeCount = (e) => {
+    const { name, checked } = e.target
+    if (name == 'allCount') {
+      setIsCheckedCount({
+        ...countCheckboxesInitialValue,
+      })
+      return
+    }
+    setIsCheckedCount((prevState) => ({
+      ...prevState,
+      allCount: false,
       [name]: checked,
     }))
   }
 
-  const inputItemsGenerator = (attributesArray, allName) => {
+  const inputItemsGenerator = (attributesArray, allName, state, handlerOnChange) => {
     const attributesItems = attributesArray.map((attribute) => {
       if (attribute == 'all') {
         return (
-          <div key={allName} className='filter__sort-item'>
+          <div key={allName} className={`filter__sort-item ${state[allName] && 'filter__sort-item--checked'}`}>
             <input
               type='checkbox'
               id={allName}
               name={allName}
-              onChange={handleOnChange}
-              checked={isChecked[allName]}
+              onChange={handlerOnChange}
+              checked={state[allName]}
             />
             <label htmlFor={allName}>all</label>
           </div>
         )
       }
       return (
-        <div key={attribute} className='filter__sort-item'>
+        <div key={attribute} className={`filter__sort-item ${state[attribute] && 'filter__sort-item--checked'}`}>
           <input
             type='checkbox'
             id={attribute}
             name={attribute}
-            onChange={handleOnChange}
-            checked={isChecked[attribute]}
+            onChange={handlerOnChange}
+            checked={state[attribute]}
           />
           <label htmlFor={attribute}>{attribute}</label>
         </div>
@@ -77,10 +121,20 @@ function Filter() {
     return attributesItems
   }
 
-  const attributesItems = inputItemsGenerator(attributes.attributes, 'allAttributes')
-  const rankSortItems = inputItemsGenerator(attributes.rank, 'allRank')
-  const typeItems = inputItemsGenerator(attributes.type, 'allType')
-  const attributesCountItems = inputItemsGenerator(attributes.attributes_count, 'allCount')
+  const attributesItems = inputItemsGenerator(
+    attributes,
+    'allAttributes',
+    isCheckedAttributes,
+    handleOnChangeAttributes
+  )
+  const rankSortItems = inputItemsGenerator(rank, 'allRank', isCheckedRank, handleOnChangeRank)
+  const typeItems = inputItemsGenerator(type, 'allType', isCheckedType, handleOnChangeType)
+  const attributesCountItems = inputItemsGenerator(
+    attributes_count,
+    'allCount',
+    isCheckedCount,
+    handleOnChangeCount
+  )
 
   return (
     <div className='filter'>
