@@ -14,6 +14,11 @@ function Gallery() {
   //punks id for rendering
   const [punksId, setPunksID] = useState(startPunksId)
 
+  //punks filtered attributes
+  const [filteredAttributes, setFilteredAttributes] = useState([])
+
+  
+
   const handleSearch = (e) => {
     setSearchTerm(e.target.value)
   }

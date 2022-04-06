@@ -29,7 +29,22 @@ function Filter() {
   const [isCheckedCount, setIsCheckedCount] = useState(countCheckboxesInitialValue)
   const [activeFilter, setActiveFilter] = useState([])
 
-  console.log(isCheckedRank)
+  useEffect(() => {
+    const getActiveFiltersArray = (...args) => {
+      const activeFilters = []
+      for (let i = 0; i < args.length; i++) {
+        const array = Object.entries(args[i])
+        const filteredArray = array.filter((item) => item[1])
+        for (const item of filteredArray) {
+          activeFilters.push(item[0])
+        }
+      }
+      console.log(activeFilters)
+      return activeFilters
+    }
+    const activeFilters = getActiveFiltersArray(isCheckedAttributes, isCheckedRank, isCheckedType, isCheckedCount)
+    setActiveFilter(activeFilters)
+  }, [isCheckedAttributes, isCheckedRank, isCheckedType, isCheckedCount])
 
   //TODO:create one handler function for checkboxes change state
   const handleOnChangeAttributes = (e) => {
@@ -94,13 +109,7 @@ function Filter() {
       if (attribute == 'all') {
         return (
           <div key={allName} className={`filter__sort-item ${state[allName] && 'filter__sort-item--checked'}`}>
-            <input
-              type='checkbox'
-              id={allName}
-              name={allName}
-              onChange={handlerOnChange}
-              checked={state[allName]}
-            />
+            <input type='checkbox' id={allName} name={allName} onChange={handlerOnChange} checked={state[allName]} />
             <label htmlFor={allName}>all</label>
           </div>
         )
@@ -129,12 +138,7 @@ function Filter() {
   )
   const rankSortItems = inputItemsGenerator(rank, 'allRank', isCheckedRank, handleOnChangeRank)
   const typeItems = inputItemsGenerator(type, 'allType', isCheckedType, handleOnChangeType)
-  const attributesCountItems = inputItemsGenerator(
-    attributes_count,
-    'allCount',
-    isCheckedCount,
-    handleOnChangeCount
-  )
+  const attributesCountItems = inputItemsGenerator(attributes_count, 'allCount', isCheckedCount, handleOnChangeCount)
 
   return (
     <div className='filter'>
