@@ -7,21 +7,34 @@ import { IoMdClose } from 'react-icons/io'
 const startCheckboxes = {}
 
 for (let i = 0; i < attributes.attributes.length; i++) {
+  if (attributes.attributes[i] == 'all') {
+    startCheckboxes['allAttributes'] = true
+  }
   startCheckboxes[attributes.attributes[i]] = false
 }
 for (let i = 0; i < attributes.attributes_count.length; i++) {
+  if (attributes.attributes[i] == 'all') {
+    startCheckboxes['allCount'] = true
+  }
   startCheckboxes[attributes.attributes_count[i]] = false
 }
 for (let i = 0; i < attributes.rank.length; i++) {
+  if (attributes.attributes[i] == 'all') {
+    startCheckboxes['allRank'] = true
+  }
   startCheckboxes[attributes.rank[i]] = false
 }
 for (let i = 0; i < attributes.type.length; i++) {
+  if (attributes.attributes[i] == 'all') {
+    startCheckboxes['allType'] = true
+  }
   startCheckboxes[attributes.type[i]] = false
 }
 
 function Filter() {
   const [isOpenGrid, setIsOpenGrid] = useState(false)
   const [isChecked, setIsChecked] = useState(startCheckboxes)
+
 
   const handleOnChange = (e) => {
     const { name, checked } = e.target
@@ -31,21 +44,6 @@ function Filter() {
       [name]: checked,
     }))
   }
-
-  const attributesItems = attributes.attributes.map((attribute) => {
-    return (
-      <div key={attribute} className='filter__sort-item'>
-        <input
-          type='checkbox'
-          id={attribute}
-          name={attribute}
-          onChange={handleOnChange}
-          checked={isChecked[attribute]}
-        />
-        <label htmlFor={attribute}>{attribute}</label>
-      </div>
-    )
-  })
 
   const inputItemsGenerator = (attributesArray, allName) => {
     const attributesItems = attributesArray.map((attribute) => {
@@ -76,50 +74,17 @@ function Filter() {
         </div>
       )
     })
+    return attributesItems
   }
-  const rankSortItems = attributes.rank.map((attribute) => (
-    <div key={attribute} className='filter__sort-item'>
-      <input
-        type='checkbox'
-        id={attribute}
-        name={attribute}
-        onChange={handleOnChange}
-        checked={isChecked[attribute]}
-      />
-      <label htmlFor={attribute}>{attribute}</label>
-    </div>
-  ))
-  const typeItems = attributes.type.map((attribute) => (
-    <div key={attribute} className='filter__sort-item'>
-      <input
-        type='checkbox'
-        id={attribute}
-        name={attribute}
-        onChange={handleOnChange}
-        checked={isChecked[attribute]}
-      />
-      <label htmlFor={attribute}>{attribute}</label>
-    </div>
-  ))
-  const attributesCountItems = attributes.attributes_count.map((attribute) => (
-    <div key={attribute} className='filter__sort-item'>
-      <input
-        type='checkbox'
-        id={attribute}
-        name={attribute}
-        onChange={handleOnChange}
-        checked={isChecked[attribute]}
-      />
-      <label htmlFor={attribute}>{attribute}</label>
-    </div>
-  ))
+
+  const attributesItems = inputItemsGenerator(attributes.attributes, 'allAttributes')
+  const rankSortItems = inputItemsGenerator(attributes.rank, 'allRank')
+  const typeItems = inputItemsGenerator(attributes.type, 'allType')
+  const attributesCountItems = inputItemsGenerator(attributes.attributes_count, 'allCount')
 
   return (
     <div className='filter'>
-      <button
-        className='filter__open-btn btn'
-        onClick={() => setIsOpenGrid(true)}
-      >
+      <button className='filter__open-btn btn' onClick={() => setIsOpenGrid(true)}>
         <div className='filter__icon-container'>
           <BsFilter className='filter__open-icon' />
           <span className='filter__open-icon-text'>filter</span>
@@ -129,10 +94,7 @@ function Filter() {
         <h1>Filter</h1>
         <div className='filter__grid-close-btn-container'>
           <button className='filter__grid-close-btn btn'>
-            <IoMdClose
-              className='filter__grid-close-icon'
-              onClick={() => setIsOpenGrid(false)}
-            />
+            <IoMdClose className='filter__grid-close-icon' onClick={() => setIsOpenGrid(false)} />
           </button>
         </div>
         <div className='filter__sort-container'>
