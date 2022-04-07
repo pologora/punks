@@ -3,11 +3,10 @@ import './Home.css';
 import bigLogo from '../../../data/punks_images/168.png';
 import { Link } from 'react-router-dom';
 
-function Home(props) {
+function Home() {
   const punksLeft = 10000;
   const [punksLeftForMint, setPunksLeftForMint] = useState(punksLeft);
 
-  console.log(props);
   return (
     <div className='home'>
       <div className='home__title'>

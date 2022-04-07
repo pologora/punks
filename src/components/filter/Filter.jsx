@@ -21,7 +21,7 @@ function Filter({
 
   const inputItemsGenerator = (attributesArray, allName, state, handlerOnChange) => {
     const attributesItems = attributesArray.map((attribute) => {
-      if (attribute == 'all') {
+      if (attribute === 'all') {
         return (
           <div key={allName} className={`filter__sort-item ${state[allName] && 'filter__sort-item--checked'}`}>
             <input type='checkbox' id={allName} name={allName} onChange={handlerOnChange} checked={state[allName]} />
@@ -78,10 +78,10 @@ function Filter({
           <div className='filter__sort-title'>Filter by type</div>
           <div className='filter__sort-items'>{typeItems}</div>
         </div>
-        <div className='filter__sort-container'>
+        {/* <div className='filter__sort-container'>
           <div className='filter__sort-title'>Filter by attributes count</div>
           <div className='filter__sort-items'>{attributesCountItems}</div>
-        </div>
+        </div> */}
         <div className='filter__sort-container'>
           <div className='filter__sort-title'>Filter by attributes</div>
           <div className='filter__sort-items'>{attributesItems}</div>

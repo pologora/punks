@@ -149,8 +149,4 @@ button {
   .mint__input {
     max-width: 500px;
   }
-
-  .footer__icon {
-    font-size: var(--font-size-sm);
-  }
 }

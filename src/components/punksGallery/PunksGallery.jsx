@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import Punk from '../punk/Punk'
 import './PunksGallery.css'
 import allPunksJson from '../../data/allinonejson/punks_objects.json'
-import useFilter from '../useFilter'
 
 function PunksGallery({ punks }) {
   const [punksJsonArray, setPunksJsonArray] = useState([])

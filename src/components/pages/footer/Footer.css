@@ -4,9 +4,10 @@
   background-color: var(--secondary-background-color);
 }
 
-.footer__social-links {
+/* .footer__social-links {
   text-align: center;
-}
+  
+} */
 
 .footer__contract a{
   color: var(--important-color-green);

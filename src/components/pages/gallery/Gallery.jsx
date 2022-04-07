@@ -46,7 +46,7 @@ function Gallery() {
         const array = Object.entries(args[i])
         const filteredArray = array.filter((item) => item[1])
         for (const item of filteredArray) {
-          if (item[0] != 'allAttributes' && item[0] != 'allRank' && item[0] != 'allType' && item[0] != 'allCount') {
+          if (item[0] !== 'allAttributes' && item[0] !== 'allRank' && item[0] !== 'allType' && item[0] !== 'allCount') {
             activeFilters.push(item[0])
           }
         }
@@ -83,7 +83,7 @@ function Gallery() {
   //TODO:create one handler function for checkboxes change state
   const handleOnChangeAttributes = (e) => {
     const { name, checked } = e.target
-    if (name == 'allAttributes') {
+    if (name === 'allAttributes') {
       setIsCheckedAttributes({
         ...attributesCheckboxesInitialValue,
       })
@@ -97,7 +97,7 @@ function Gallery() {
   }
   const handleOnChangeRank = (e) => {
     const { name, checked } = e.target
-    if (name == 'allRank') {
+    if (name === 'allRank') {
       setIsCheckedRank({
         ...rankCheckboxesInitialValue,
       })
@@ -111,7 +111,7 @@ function Gallery() {
   }
   const handleOnChangeType = (e) => {
     const { name, checked } = e.target
-    if (name == 'allType') {
+    if (name === 'allType') {
       setIsCheckedType({
         ...typeCheckboxesInitialValue,
       })
@@ -125,7 +125,7 @@ function Gallery() {
   }
   const handleOnChangeCount = (e) => {
     const { name, checked } = e.target
-    if (name == 'allCount') {
+    if (name === 'allCount') {
       setIsCheckedCount({
         ...countCheckboxesInitialValue,
       })
