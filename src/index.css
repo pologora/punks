@@ -8,6 +8,7 @@
   --punk-background-color: rgb(54, 53, 61);
   --hover-light-color: var(--light-color);
   --hover-dark-color: var(--primary-background-color);
+  
   --gradient-color: linear-gradient(
     115deg,
     #4fcf70,

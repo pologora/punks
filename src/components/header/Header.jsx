@@ -29,7 +29,7 @@ function Header(props) {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
+//TODO:move menu items data to file
   return (
     <header className={`header ${scroll > 15 ? 'active' : null}`}>
       <nav className='navbar container'>
@@ -56,13 +56,13 @@ function Header(props) {
           >
             Gallery
           </Link>
-          <Link
+          {/* <Link
             className='navbar__menu-item'
             to='/market'
             onClick={handleMenuItemClick}
           >
             Market
-          </Link>
+          </Link> */}
           <Link
             className='navbar__menu-item'
             to='/wallet'
