@@ -23,6 +23,10 @@ function Header(props) {
     setIsOpenMenu(false);
   };
 
+  const handleWalletConnect = async () => {
+
+  }
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -90,7 +94,7 @@ function Header(props) {
 
         <div className='navbar__buttons navbar_item-list-right'>
           <button className='btn navbar__btn  place-items-center wallet-login-btn  fancy-border'>
-            <BiWallet className='icon wallet-login-icon' />
+            <BiWallet className='icon wallet-login-icon' onClick={handleWalletConnect}/>
           </button>
           <button
             className='btn navbar__btn place-items-center theme-toggle-btn'

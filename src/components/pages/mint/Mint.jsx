@@ -5,7 +5,7 @@ const MAX_MINT = 25
 const MINT_PRICE = 25
 
 function Mint() {
-  const [inputValue, setInputValue] = useState(null)
+  const [inputValue, setInputValue] = useState(1)
 
   const handleMintSubmit = (e) => {
     e.preventDefault()
@@ -13,7 +13,7 @@ function Mint() {
 
   const onChangeMintValue = (e) => {
     const { value } = e.target
-    if (value >= 0 && value <= MAX_MINT) {
+    if (value > 0 && value <= MAX_MINT) {
       setInputValue(value)
     } 
   }
@@ -33,7 +33,7 @@ function Mint() {
             pattern='[0-9]'
             id='quantity'
             name='quantity'
-            min={0}
+            min={1}
             max={MAX_MINT}
           />
           <br />
