@@ -1,19 +1,22 @@
-import React, { useState } from 'react';
-import './Mint.css';
+import React, { useState } from 'react'
+import './Mint.css'
+
+const MAX_MINT = 25
+const MINT_PRICE = 25
 
 function Mint() {
-  const minMint = 1;
-  const maxMint = 20;
-  const [inputValue, setInputValue] = useState(1);
+  const [inputValue, setInputValue] = useState(null)
 
   const handleMintSubmit = (e) => {
-    e.preventDefault();
-  };
+    e.preventDefault()
+  }
 
   const onChangeMintValue = (e) => {
-    const newValue = e.target.value;
-    setInputValue(newValue);
-  };
+    const { value } = e.target
+    if (value >= 0 && value <= MAX_MINT) {
+      setInputValue(value)
+    } 
+  }
 
   return (
     <div className='mint'>
@@ -21,28 +24,24 @@ function Mint() {
       <p className='mint__text'>1 cpunk = 25 CRO</p>
       <div className='mint__container'>
         <form className='mint__form'>
-          <label htmlFor='quantity'>Quantity (between 1 and 10):</label>
+          <label htmlFor='quantity'>{`Quantity (between 1 and ${MAX_MINT}):`}</label>
           <input
             className='mint__input'
             value={inputValue}
             onChange={onChangeMintValue}
             type='number'
+            pattern='[0-9]'
             id='quantity'
             name='quantity'
-            min='1'
-            max='10'
+            min={0}
+            max={MAX_MINT}
           />
           <br />
-          <input
-            type='submit'
-            className='btn mint__submit'
-            value='Mint'
-            onClick={handleMintSubmit}
-          />
+          <input type='submit' className='btn mint__submit' value='Mint' onClick={handleMintSubmit} />
         </form>
       </div>
     </div>
-  );
+  )
 }
 
-export default Mint;
+export default Mint
