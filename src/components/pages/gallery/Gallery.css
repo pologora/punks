@@ -4,3 +4,29 @@
     justify-content: space-between;
 }
 
+.arrow-up-container {
+    border: 1px solid;
+    border-color: var(--light-color-alt);
+    background-color: transparent;
+    width: 3.5rem;
+    height: 3.5rem;
+    position: fixed;
+    bottom: 4vw;
+    right: 4vw;
+    font-size: 2rem;
+    display: none;
+}
+
+.arrow-up-container.active {
+    display: flex;
+}
+
+.arrow-up-container:hover {
+    background-color:rgb(3, 139, 189);
+}
+
+.arrow-up-icon {
+    color: var(--light-color-alt);
+    display: block;
+}
+

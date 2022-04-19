@@ -31,14 +31,7 @@
 }
 
 .home__mint-btn {
-    margin: var(--margin-sm);
-    padding: var(--padding-sm) 5rem;
-    border-radius: 3rem;    
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    background-color: var(--important-color-green);
-    color: #fff;
+    margin-top: 2rem;
 }
 
 

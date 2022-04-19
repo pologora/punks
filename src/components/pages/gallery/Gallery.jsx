@@ -5,7 +5,7 @@ import PunksGallery from '../../punksGallery/PunksGallery'
 import Filter from '../../filter/Filter'
 import attributesData from '../../../data/attributesJson/attributesArray.json'
 import allPunksJson from '../../../data/allinonejson/punks_objects.json'
-
+import { AiOutlineArrowUp } from 'react-icons/ai'
 const startPunksId = []
 for (let i = 0; i < 10000; i++) {
   startPunksId.push(i)
@@ -37,8 +37,24 @@ function Gallery() {
   const [isCheckedType, setIsCheckedType] = useState(typeCheckboxesInitialValue)
   const [isCheckedCount, setIsCheckedCount] = useState(countCheckboxesInitialValue)
   const [activeFilter, setActiveFilter] = useState([])
+  const [visibleArrowUp, setVisibleArrowUp] = useState(false)
 
-  // console.log([])
+  const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop
+    if (scrolled > 500) {
+      setVisibleArrowUp(true)
+    } else if (scrolled <= 500) {
+      setVisibleArrowUp(false)
+    }
+  }
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+  }
+
   useEffect(() => {
     const getActiveFiltersArray = (...args) => {
       const activeFilters = []
@@ -157,6 +173,11 @@ function Gallery() {
     }
   }, [searchTerm])
 
+  useEffect(() => {
+    window.addEventListener('scroll', toggleVisible)
+    return () => window.removeEventListener('scroll', toggleVisible)
+  }, [])
+
   return (
     <div className='gallery-page'>
       <div className='gallery-page__header'>
@@ -177,6 +198,12 @@ function Gallery() {
       </div>
 
       <div className='gallery-page__gallery'>
+        <div
+          className={`arrow-up-container btn place-items-center ${visibleArrowUp && 'active'}`}
+          onClick={scrollToTop}
+        >
+          <AiOutlineArrowUp className='arrow-up-icon' />
+        </div>
         <PunksGallery punks={punksId} />
       </div>
     </div>

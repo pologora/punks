@@ -1,5 +1,4 @@
 import React from 'react';
-import testImg from '../../data/punks_images/7.png';
 import './Punk.css';
 
 function Punk({ edition, rank, type, src }) {

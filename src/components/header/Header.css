@@ -80,6 +80,35 @@
   align-self: baseline;
 }
 
+/* .wallet-connect{
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  background-color: rgb(70, 161, 194);
+} */
+
+.wallet-connect__btn--connected {
+  background-color: var(--primary-background-color);
+  color:var(--light-color-alt) ;
+}
+
+.wallet-connect:hover {
+  background-color:rgb(3, 139, 189) ;
+}
+
+.wallet-address-title{
+  margin-left: 1rem;
+}
+
+.wallet-login-icon {
+  margin-left: 1rem;
+}
+
+.user-icon-container{
+  border-radius: 50%;
+  padding: 0.3rem;
+  background-color: rgb(70, 161, 194);
+}
 @media screen and (min-width: 800px) {
   .navbar__menu {
     position: initial;

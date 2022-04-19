@@ -140,6 +140,19 @@ button {
   color: #229ed9;
 }
 
+.btn-big {
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  background-color: rgb(70, 161, 194);
+  min-width: 10rem;
+}
+
+.btn-big:hover
+ {
+  background-color:rgb(3, 139, 189);
+}
+
 @media screen and (min-width: 500px) {
   .punksGallery {
     display: flex;
@@ -148,5 +161,8 @@ button {
   }
   .mint__input {
     max-width: 500px;
+  }
+  .screen-sm-hidden {
+    display: initial;
   }
 }

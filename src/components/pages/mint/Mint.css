@@ -10,10 +10,3 @@
     display: block;
 }
 
-.mint__submit {
-    color: var(--important-color-green);
-    font-weight: bold;
-    border: 2px solid var(--important-color-green);
-    padding: .5rem 3rem;
-    border-radius: 3rem;
-}
