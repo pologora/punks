@@ -106,7 +106,6 @@ function App() {
     if (walletConnectedDetails.connected) {
       try {
         const nftContract = new ethers.Contract(contractAddress, abi, browserWeb3Provider)
-        console.log(nftContract)
         const balanceOf = await nftContract.balanceOf(address)
         setPunksInWallet(balanceOf.toNumber())
       } catch (err) {
@@ -136,7 +135,6 @@ function App() {
       try {
         const nftContract = new ethers.Contract(contractAddress, abi, browserWeb3Provider)
         const punksLeft = await nftContract.availableTokenCount()
-        console.log(punksLeft.toNumber())
         setPunksLeftToMint(punksLeft.toNumber())
       } catch (err) {
         console.log(err)

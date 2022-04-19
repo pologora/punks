@@ -7,7 +7,7 @@ import Swal from 'sweetalert2'
 import * as utils from '../../../web3/utils'
 
 const MAX_MINT = 25
-const MINT_PRICE = '0.001'
+const MINT_PRICE = '50'
 
 function Mint({ walletConnectedDetails, connect }) {
   const [mintQuantity, setMintQuantity] = useState(1)
