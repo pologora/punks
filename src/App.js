@@ -24,14 +24,14 @@ function App() {
 
   const connect = async () => {
     try {
-      let chainId = await window.ethereum.request({ method: 'eth_chainId' })
-      // if (!(chainId === rps.chainIdHex)) {
-      //   await switchNetwork()
-      //   return
-      // }
       const accounts = await window.ethereum.request({
         method: 'eth_requestAccounts',
       })
+      let chainId = await window.ethereum.request({ method: 'eth_chainId' })
+      if (!(chainId === rps.chainIdHex)) {
+        await switchNetwork()
+        return
+      }
       //events on changes
       window.ethereum.on('chainChanged', () => {
         window.location.reload()
@@ -55,7 +55,7 @@ function App() {
       })
       setWalletAddress(accounts[0])
     } catch (e) {
-      window.alert(e)
+      console.log(e)
     }
   }
 
@@ -78,6 +78,7 @@ function App() {
     if (isMetaMaskInstalled()) {
       try {
         connect()
+        console.log('connecting...')
       } catch (error) {
         console.log(error)
       }
