@@ -6,7 +6,7 @@ MetaMask crypto wallet is necessary to interact with a webpage and blockchain.
 <img src="https://gateway.pinata.cloud/ipfs/QmPEtccRodRgyhQwiBrmTMZkoeo3skbCWFpkg4CqahGrf1/1038.png" width="100" height="100"><img src="https://gateway.pinata.cloud/ipfs/QmPEtccRodRgyhQwiBrmTMZkoeo3skbCWFpkg4CqahGrf1/1568.png" width="100" height="100"><img src="https://gateway.pinata.cloud/ipfs/QmPEtccRodRgyhQwiBrmTMZkoeo3skbCWFpkg4CqahGrf1/2323.png" width="100" height="100">
 
 
-## Roadmap 
+## To do
 
 - [ ] add crypto.com defi wallet support (Redux)
 - [ ] add any wallet support
