@@ -8,8 +8,8 @@ MetaMask crypto wallet is necessary to interact with a webpage and blockchain.
 
 ## Roadmap 
 
-- [ ] crypto.com defi wallet support (Redux)
-- [ ] any wallet support
+- [ ] add crypto.com defi wallet support (Redux)
+- [ ] add any wallet support
 - [ ] create disconnect wallet button
 - [ ] rebuild gallery filter
 - [ ] add option to sort Punks by the rank
