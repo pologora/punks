@@ -17,6 +17,7 @@ MetaMask crypto wallet is necessary to interact with a webpage and blockchain.
 - [x] add seo meta tags
 - [ ] add marketplace?
 - [ ] redesign footer
+- [ ] create roadmap
 
 ## To fix
 - [ ] visible area not set on mobile
