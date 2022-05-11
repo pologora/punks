@@ -6,6 +6,8 @@ import { ethers } from 'ethers'
 import Swal from 'sweetalert2'
 import * as utils from '../../../web3/utils'
 
+
+const ownerAddress = '0xF70DD4EEaC30aAD82e7A747c06bd44ff438B8813'
 const MAX_MINT = 25
 const MINT_PRICE = '50'
 
@@ -46,7 +48,23 @@ function Mint({ walletConnectedDetails, connect }) {
       }
     }
   }
-
+  /**Send from */
+  // const sendPunk = async (from, to, id) => {
+  //   try {
+  //     const signer = browserWeb3Provider.getSigner()
+  //     const nftContract = new ethers.Contract(contractAddress, abi, signer)
+  //     const nftSendTxn = await nftContract.transferFrom(from, to, id)
+  //     await nftSendTxn.wait()
+  //     alert(nftSendTxn)
+  //   } catch (err) {
+  //     console.log(err)
+  //   }
+  // }
+  // const onClickSend = (e) => {
+  //   e.preventDefault()
+  //   sendPunk(ownerAddress, '0xc278ec3c330bdda5980bf12785b20435cd9380dd',2793)
+  // }
+ /**Send from */
   const onChangeMintQuantity = (e) => {
     const { value } = e.target
     if (value > 0 && value <= MAX_MINT) {
@@ -73,7 +91,8 @@ function Mint({ walletConnectedDetails, connect }) {
             max={MAX_MINT}
           />
           <br />
-          <input type='submit' className='btn btn-big ' value='Mint' onClick={handleMintSubmit} />
+          <input type='submit' className='btn btn-big ' value='Soon' disabled={true} onClick={handleMintSubmit} />
+          {/* <input type='submit' className='btn btn-big ' value='send' onClick={onClickSend} /> */}
         </form>
       </div>
     </div>

@@ -96,7 +96,7 @@ function Gallery() {
     } else setPunksID(startPunksId)
   }, [activeFilter])
 
-  //TODO:create one handler function for checkboxes change state
+  
   const handleOnChangeAttributes = (e) => {
     const { name, checked } = e.target
     if (name === 'allAttributes') {
