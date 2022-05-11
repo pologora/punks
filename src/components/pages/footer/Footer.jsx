@@ -17,7 +17,7 @@ function Footer() {
       </div>
 
       <div className='footer__contract'>
-        <a href='https://cronoscan.com/address/0x7df9E6D6f20110e903c1566eE924C7729017ec37' target='_blank' >Contract</a>
+        {/* <a href='https://cronoscan.com/address/0x7df9E6D6f20110e903c1566eE924C7729017ec37' target='_blank' >Contract</a> */}
       </div>
 
       <div className='footer__info'>Cpunks is in no way affiliated with Larva Labs and/or CryptoPunks</div>

@@ -5,7 +5,10 @@
   --important-color-green: rgb(2, 156, 2);
   --primary-background-color: #121417;
   --secondary-background-color: #252830;
-  --punk-background-color: rgb(54, 53, 61);
+  /* --punk-background-color: rgb(54, 53, 61); */
+  --punk-background-color: rgba(20, 32, 88, 0.726);
+  --button-big-color: rgba(46, 75, 208, 0.726);
+
   --hover-light-color: var(--light-color);
   --hover-dark-color: var(--primary-background-color);
   
@@ -46,6 +49,7 @@
 html {
   /* font-size: 10px; */
   font-size: 62.5%;
+  
 }
 
 small {
@@ -91,7 +95,8 @@ button {
   --important-color-green: rgb(2, 122, 2);
   --primary-background-color: #fff;
   --secondary-background-color: #f1f1f1;
-  --punk-background-color: rgba(214, 200, 200, 0.726);
+  /* --punk-background-color: rgba(214, 200, 200, 0.726); */
+  /* --punk-background-color: rgba(20, 32, 88, 0.726); */
   --hover-light-color: #fff;
   --transparent-light-color: #252830;
   --transparent-dark-color: rgba(0, 0, 0, 0.1);
@@ -144,13 +149,13 @@ button {
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 2rem;
-  background-color: rgb(70, 161, 194);
+  background-color: var(--button-big-color);
   min-width: 10rem;
 }
 
 .btn-big:hover
  {
-  background-color:rgb(3, 139, 189);
+  background-color:rgba(32, 54, 149, 0.726);
 }
 
 @media screen and (min-width: 500px) {

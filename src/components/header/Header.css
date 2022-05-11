@@ -64,8 +64,7 @@
   display: flex;
 }
 
-.navbar__menu-item:hover,
-.btn:hover {
+.navbar__menu-item:hover {
   color: var(--light-color);
 }
 

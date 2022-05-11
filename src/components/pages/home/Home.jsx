@@ -11,7 +11,7 @@ function Home({ punksLeftToMint }) {
         <h1 className='home__title-text'>Cpunks</h1>
       </div>
       <div className='home__about'>
-        <h3 className='home__about__article'>Most known punks like cryptopunks come to Cronos blockchain.</h3>
+        <h3 className='home__about__article'>Most known punks like cryptopunks came to Cronos blockchain.</h3>
         <p className='home__about__article'>10 000 uniquely generated characters. No two are exactly alike.</p>
         <p className='home__about__article'>
           {' '}
