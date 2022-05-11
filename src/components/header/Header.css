@@ -80,17 +80,12 @@
   align-self: baseline;
 }
 
-/* .wallet-connect{
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 2rem;
-  background-color: rgb(70, 161, 194);
-} */
 
 .wallet-connect__btn--connected {
   background-color: var(--primary-background-color);
   color:var(--light-color-alt) ;
 }
+
 
 .wallet-connect:hover {
   background-color:rgb(3, 139, 189) ;
